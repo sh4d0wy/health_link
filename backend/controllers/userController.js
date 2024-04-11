@@ -1,12 +1,12 @@
-const {user} = require('../model/userModel');
+const user = require('../model/userModel');
 
-const userGetController=(req,res)=>{
+const userGetController=async (req,res)=>{
     const {id} = req.params;
-    const data = user.findById(id);
+    const data = await user.find();
     res.status(200).json({data});
 
 }
-const  userPostController=(req,res)=>{
+const  userPostController= (req,res)=>{
     const details = req.body;
     const userCreated = new user(details)
     userCreated.save()
