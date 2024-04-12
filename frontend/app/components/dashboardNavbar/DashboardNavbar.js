@@ -1,21 +1,14 @@
-
-
 import Image from "next/image";
 import Icon from "../../../public/heartlink.svg";
 import { currentUser, UserButton } from "@clerk/nextjs";
-import { useContext } from "react";
-import UserContext from '../../_Context/UserContext';
+import axios from 'axios';
 
 export default async function DashboardNavbar() {
-  const userContext = useContext(UserContext);
-  const user1 = await currentUser();
-  console.log(user1)
-  console.log(userContext.firstName)
-  // if(user1){
-  //   userContext.setUser(user1)
-  // }
-
-
+  const user1 =await currentUser();
+  axios.post('http://localhost:3001/user',{
+    name:user1.firstName,
+    email:user1.emailAddresses[0].emailAddress,
+  })
   return (
     <>
       <div className="flex justify-between py-4 px-6">

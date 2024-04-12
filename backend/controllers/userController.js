@@ -10,7 +10,8 @@ const userGetController=async (req,res)=>{
 
 const  userPostController=async (req,res)=>{
     const details = req.body;
-    const userCreated = new user(details)
+    const userCreated = new user(details);
+    
     await userCreated.save()
         .then((createdUser)=>{
             console.log("New User Created");
