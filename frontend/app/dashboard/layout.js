@@ -14,7 +14,7 @@ export default function ({ children }) {
             <Link href="/dashboard/community">Community</Link>
           </h1>
         </div>
-        <div className="bg-white w-[85vw] h-[87vh] rounded-e-lg p-4 px-8">
+        <div className="bg-white w-[85vw] h-[87vh] rounded-lg p-4 px-8">
           {children}
         </div>
       </div>

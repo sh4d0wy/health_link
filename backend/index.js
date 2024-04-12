@@ -7,11 +7,6 @@ const cors = require('cors');
 const userRouter = require('./routes/userRoute');
 const consultantRouter = require('./routes/consultantRoute')
 const emergencyRouter = require('./routes/emergencyRoute')
-main()
-.then(()=>{
-    console.log("Database connected")
-})
-.catch((e)=>console.log(e))
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 
@@ -35,7 +30,7 @@ io.on('connection', (socket) => {
 
 async function main(){
     try{
-        await mongoose.connect("mongodb+srv://sakshambhugra:healthlink@cluster0.x32gvme.mongodb.net/healthlink?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect("mongodb+srv://Yashika:Saksham@cluster0.e0qj0bd.mongodb.net/healthlink?retryWrites=true&w=majority&appName=Cluster0");
         console.log("Db Connected");
     }catch(e){
         console.log(e);

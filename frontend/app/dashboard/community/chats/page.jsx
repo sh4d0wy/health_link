@@ -1,7 +1,7 @@
 "use client"
 import io from 'socket.io-client'
 import React,{useState,useEffect, useContext} from 'react'
-import UserContext from '../../_Context/UserContext';
+import UserContext from '../../../_Context/UserContext';
 
 const page = () => {
     const [socket, setSocket] = useState(null);
@@ -41,16 +41,16 @@ const page = () => {
 
     return (
         <>
-        <div className='w-full h-[100vh] flex flex-col bg-blue-500 gap-6  items-center justify-center'>
-            <div className='text-4xl font-bold'>Community Chat</div>
-            <div className='w-[80vw] overflow-y-auto scrollable h-[80vh] rounded-3xl flex flex-col p-16 bg-white gap-10  justify-end'>
+        <div className='w-full h-full flex flex-col gap-6  items-center justify-center'>
+            {/* <div className='text-4xl font-bold'>Community Chat</div> */}
+            <div className='w-[80vw] overflow-y-auto scrollable h-full rounded-3xl flex flex-col p-16 bg-white gap-10  justify-end'>
                 <div className='flex flex-col gap-4' >
             {receivedMsg.length>0&&
             receivedMsg.map((msg,index)=>{
                 return(
                     <div className='bg-blue-100 rounded-xl flex flex-col h-full text-black w-1/4 px-4 py-2' >
                     <div>
-                    <sup>{user.userName}</sup>
+                    <sup>{user.firstName+' '+user.lastName}</sup>
                     </div>
                     <div className='flex justify-between'>
                     <p className='text-black' key={index}>{msg}</p>
