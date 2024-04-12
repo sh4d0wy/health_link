@@ -1,6 +1,8 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-import UserProvider from "./_Context/UserProvider";
+import UserProvider from '../app/_Context/UserProvider';
+
+
 
 export const metadata = {
   title: "HealthLink"
