@@ -6,6 +6,12 @@ const {Server} = require('socket.io');
 const cors = require('cors');
 const userRouter = require('./routes/userRoute');
 const consultantRouter = require('./routes/consultantRoute')
+const emergencyRouter = require('./routes/emergencyRoute')
+main()
+.then(()=>{
+    console.log("Database connected")
+})
+.catch((e)=>console.log(e))
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 
@@ -40,6 +46,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use('/user',userRouter);
 app.use('/consultant',consultantRouter);
+app.use('/emergency',emergencyRouter);
 
 http.listen(3001,()=>{
     main();
