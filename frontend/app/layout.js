@@ -18,6 +18,7 @@ export default  function RootLayout({ children}) {
         <UserProvider>
         {children}
         </UserProvider>
+
         </body>
     </html>
     </ClerkProvider>

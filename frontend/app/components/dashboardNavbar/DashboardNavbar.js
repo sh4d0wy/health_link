@@ -4,7 +4,7 @@ import { currentUser, UserButton } from "@clerk/nextjs";
 
 export default async function DashboardNavbar() {
   const user = await currentUser();
-  console.log(user)
+
   return (
     <>
       <div className="flex justify-between py-4 px-6">
