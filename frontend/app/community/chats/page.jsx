@@ -7,6 +7,7 @@ const page = () => {
     const [socket, setSocket] = useState(null);
     const [message, setMessage] = useState('');
     const [receivedMsg,setReceivedMsg] = useState([])
+    
     const {user} = useContext(UserContext);
     
     useEffect(() => {

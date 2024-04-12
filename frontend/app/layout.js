@@ -1,5 +1,4 @@
 import { ClerkProvider } from "@clerk/nextjs";
-
 import "./globals.css";
 import UserProvider from '../app/_Context/UserProvider';
 
@@ -19,6 +18,7 @@ export default  function RootLayout({ children}) {
         
         {children}
         
+
         </body>
     </html>
     </ClerkProvider>

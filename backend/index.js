@@ -38,7 +38,7 @@ async function main(){
 }
 
 app.use(express.urlencoded({extended:true}));
-app.use(express.json());
+app.use(express.json())
 app.use('/user',userRouter);
 app.use('/consultant',consultantRouter);
 app.use('/emergency',emergencyRouter);

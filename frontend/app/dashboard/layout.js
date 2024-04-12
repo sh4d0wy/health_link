@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DashboardNavbar from "../components/dashboardNavbar/DashboardNavbar";
+import UserProvider from "../_Context/UserProvider";
 
 export default function ({ children }) {
   return (
@@ -15,7 +16,9 @@ export default function ({ children }) {
           </h1>
         </div>
         <div className="bg-white w-[85vw] h-[87vh] rounded-lg p-4 px-8">
+          <UserProvider>
           {children}
+          </UserProvider>
         </div>
       </div>
     </>
