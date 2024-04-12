@@ -4,11 +4,8 @@ import { currentUser, UserButton } from "@clerk/nextjs";
 import axios from 'axios';
 
 export default async function DashboardNavbar() {
-  const user1 =await currentUser();
-  axios.post('http://localhost:3001/user',{
-    name:user1.firstName,
-    email:user1.emailAddresses[0].emailAddress,
-  })
+  const user = await currentUser();
+
   return (
     <>
       <div className="flex justify-between py-4 px-6">
