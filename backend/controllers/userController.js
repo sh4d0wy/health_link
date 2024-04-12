@@ -1,15 +1,17 @@
 const {user} = require('../model/userModel');
 
-const userGetController=(req,res)=>{
+const userGetController=async (req,res)=>{
     const {id} = req.params;
-    const data = user.findById(id);
-    res.status(200).json({data});
-
+    const data = await user.find({id});
+    res.status(200).json({
+        "data":data
+    });
 }
-const  userPostController=(req,res)=>{
+
+const  userPostController=async (req,res)=>{
     const details = req.body;
     const userCreated = new user(details)
-    userCreated.save()
+    await userCreated.save()
         .then((createdUser)=>{
             console.log("New User Created");
             res.status(201).json({message:"User created",data:createdUser})
@@ -20,4 +22,18 @@ const  userPostController=(req,res)=>{
         });
 }
 
-module.exports = {userGetController,userPostController}
+const userPutController=async ()=>{
+    const {UserId}=req.body;
+    try{
+        await emergency.updateOne({name:UserId},{Coins:Coins+1});
+        res.json({
+            message:"Updated"
+        })
+    }
+    catch(e){
+        res.json({
+            "Error":e
+        })
+    }
+}
+module.exports = {userGetController,userPostController,userPutController}

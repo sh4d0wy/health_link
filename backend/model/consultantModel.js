@@ -5,5 +5,6 @@ const consultantSchema= new mongoose.Schema({
     specialization:{type:String},
     location:{type:String}
 })
+
 const Consultant = mongoose.model('Consultant',consultantSchema);
-module.exports=Consultant;
+module.exports = Consultant;

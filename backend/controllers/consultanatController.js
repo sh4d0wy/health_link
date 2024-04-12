@@ -1,8 +1,8 @@
 const {Consultant} = require('../model/consultantModel');
 
-const  getConsultants = (req, res) =>{
-    const data = Consultant.find({});
-    res.json({msg:'ok',data:data});
+const  getConsultants =async (req, res) =>{
+    const data =await Consultant.find({});
+    res.json({message:'OK',data:data});
 }
 
 module.exports = {getConsultants};

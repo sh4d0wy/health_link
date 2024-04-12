@@ -3,6 +3,7 @@ const mongoose=require("mongoose");
 const app = express();
 const userRouter = require('./routes/userRoute')
 const consultantRouter = require('./routes/consultantRoute')
+const emergencyRouter = require('./routes/emergencyRoute')
 main()
 .then(()=>{
     console.log("Database connected")
@@ -16,6 +17,7 @@ async function main(){
 app.use(express.urlencoded({extended:true}));
 app.use('/user',userRouter);
 app.use('/consultant',consultantRouter);
+app.use('/emergency',emergencyRouter);
 
 app.listen(3001,()=>{
     console.log('Server is running on port 3001');
