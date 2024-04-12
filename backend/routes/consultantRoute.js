@@ -1,9 +1,10 @@
-const {getConsultants} =require('../controllers/consultanatController');
+const {getConsultants,postConsultants} =require('../controllers/consultanatController');
 
 const express = require('express');
 const  router= express.Router();
 
 router
-    .get('/',getConsultants);
+    .get('/',getConsultants)
+    .post('/',postConsultants)
 
 module.exports = router;

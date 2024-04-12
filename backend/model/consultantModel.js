@@ -1,4 +1,5 @@
 const mongoose=require("mongoose");
+
 const consultantSchema= new mongoose.Schema({
     name:{type:String,required:true},
     userRating:{type:Number,default:0},
@@ -8,3 +9,4 @@ const consultantSchema= new mongoose.Schema({
 
 const Consultant = mongoose.model('Consultant',consultantSchema);
 module.exports = Consultant;
+
