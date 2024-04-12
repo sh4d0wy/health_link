@@ -1,12 +1,13 @@
 "use client"
 import io from 'socket.io-client'
 import React,{useState,useEffect, useContext} from 'react'
-import UserContext from '@/app/_Context/UserContext';
+import UserContext from '../../_Context/UserContext';
 
 const page = () => {
     const [socket, setSocket] = useState(null);
     const [message, setMessage] = useState('');
     const [receivedMsg,setReceivedMsg] = useState([])
+    
     const {user} = useContext(UserContext);
     
     useEffect(() => {

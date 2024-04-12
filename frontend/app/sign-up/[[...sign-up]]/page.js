@@ -1,8 +1,13 @@
-import { SignUp } from "@clerk/nextjs";
+import { SignUp, auth } from "@clerk/nextjs";
 import Image from "next/image";
 import Icon from "../../../public/heartlink.svg"
+import { useContext } from "react";
+import UserContext from "../../_Context/UserContext";
  
-export default function Page() {
+export default async function Page() {
+  // const {setUser} = useContext(UserContext);
+  const authuser = auth();
+  console.log(authuser);
   return(
   <>
   <div>

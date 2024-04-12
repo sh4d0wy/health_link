@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
 
 async function main(){
     try{
-        await mongoose.connect("mongodb+srv://sakshambhugra:healthlink@cluster0.x32gvme.mongodb.net/healthlink?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect("mongodb+srv://healthlink:healthlink@cluster0.x32gvme.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
         console.log("Db Connected");
     }catch(e){
         console.log(e);
@@ -37,7 +37,7 @@ async function main(){
 }
 
 app.use(express.urlencoded({extended:true}));
-app.use(express.json());
+app.use(express.json())
 app.use('/user',userRouter);
 app.use('/consultant',consultantRouter);
 
